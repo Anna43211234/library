@@ -4,8 +4,27 @@ class Book:
 		self.author = author
 		self.year = year
 		self.isbn = isbn 
+		self.is_available = True
+
 	def get_info(self) -> str:
-	    return f"{self.title}, автор - {self.author}, год издания - {self.year}"
+		return f"{self.title}, автор - {self.author}, год издания - {self.year}"
+	
+	def borrow(self) -> str:
+		'''Бронирование книги'''
+		if self.is_available:
+			self.is_available = False
+			return f"Книга '{self.title}' выдана"
+		else:
+			return f"Выдача книги? '{self.title}' невозможна"
+	
+	def return_book(self) -> str:
+		'''Возврат книги'''
+		if not self.is_available:
+			self.is_available = True
+			return f"Книга '{self.title}' возвращена"
+		else:
+			return f"Книга '{self.title}' уже доступна"
+		
 		
 class EBook(Book):
 	def __init__(self, title: str, author: str, year, format: str, isbn: str):

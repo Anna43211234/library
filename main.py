@@ -1,4 +1,17 @@
 from src.models.book import Book
+from src.models.user import User
 
-book1 = Book("Гарри Поттер и Философский камень", "Дж.К.Роулинг", 1997, "978-3-16-148410-0")		
-print(book1.get_info())	
+
+title1 = "Гарри Поттер и Философский камень"
+title1 = "Капитанская дочка"
+author1 = "Дж.К.Роулинг"
+author2 = "А.С.Пушкин"
+isbn = "978-3-16-148410-0"
+book1 = Book(title1, author1, 1997, isbn)
+print(book1.get_info())
+
+book2 = Book(title2, author2, 1999, isbn)
+print(book2.get_info())
+
+user = User("Иван", "М", "+7 982-838-18-48", "'Золушка', 'Золотая рыбка'")
+print(user.get_info())
